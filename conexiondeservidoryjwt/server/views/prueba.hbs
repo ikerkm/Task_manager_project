@@ -1,0 +1,19 @@
+<h1>Usuarios</h1>
+{{#if users.length}}
+    {{#each users}}
+        <p>
+            {{id}}: {{name}}
+        </p>
+    {{/each}}
+{{else}}
+    No hay usuarios
+{{/if}}
+
+<h2>Administrador</h2>
+{{#with admin}}
+    <h3>{{name}}</h3>
+    <p>El administrador es {{fullName}}</p>
+{{else}}
+    No hay administrador
+    {{log "Se ha intentado renderizar SIN administrador"}}
+{{/with}}

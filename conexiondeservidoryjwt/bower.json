@@ -1,0 +1,21 @@
+{
+  "name": "mongo-valencia",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "ivan-ruizrosello <ivan.ruizrosello@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./server/public/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}
