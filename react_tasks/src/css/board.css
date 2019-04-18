@@ -1,0 +1,47 @@
+.board_div {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+
+
+.task_creator_form {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+
+
+}
+
+.Task_manager {
+
+    background-color: green;
+
+}
+
+.button_creator {
+    all: unset;
+    color: white;
+    font-size: 25px;
+}
+
+.the_task {
+
+
+    display: flex;
+    flex-direction: column;
+}
+
+.input_task {
+    border: 0
+}
+
+.login_div {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+
+}
