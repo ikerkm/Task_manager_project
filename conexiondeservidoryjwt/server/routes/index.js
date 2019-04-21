@@ -40,14 +40,16 @@ router.post('/users/auth', async (req, res) => {
         res.status(500).send(err);
     }
 });
-router.post('/users/tkn', async (req, res) => {
+router.get('/users/tkn', async (req, res) => {
     try {
-
-        const user_on = await User.find(req.body.the_token);
+        console.log(req.body.the_token)
+        const user_on = await User.findOne(req.body.the_token);
         console.log("hey this is my id:" + user_on);
-        if (!user_on)
+        if (!user_on) {
             return res.status(401).send('Wrong match');
-
+        } else {
+            res.send(user_on);
+        }
 
     } catch (err) {
         res.status(500).send(err);

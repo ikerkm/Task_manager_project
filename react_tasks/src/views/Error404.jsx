@@ -2,14 +2,14 @@ import React, { Component, useState, useEffect } from 'react';
 
 
 const Error404 = (props) => {
-    const unblock = props.history.block((location, action) => {
-        unblock();
-        return "Are you sure you want to leave this page?";
-
-
-    }
-
-    );
+    /* const unblock = props.history.block((location, action) => {
+         unblock();
+         return "Are you sure you want to leave this page?";
+ 
+ 
+     }
+ 
+     );*/
     return (
         <div>Error 404
 

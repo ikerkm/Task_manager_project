@@ -8,19 +8,28 @@
  */
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Route, Switch, Link, NavLink } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, Link, NavLink, Redirect } from 'react-router-dom'
 import Board from './views/board';
 import Login from './views/Login';
 import Error404 from './views/Error404';
 import Register from './views/Register'
-
+import Main_page from './views/main_page'
 const AppRouter = () => {
+    var the_user_id = "";
+
+
 
     if (localStorage.getItem('Authorization')) {
         console.log("Logged in");
-
+        const re_router = "";
         const the_token = localStorage.getItem('Authorization');
-        axios.post('http://localhost:3000/users/tkn', { the_token }).then(res => {
+        axios.get('http://localhost:3000/users/tkn', { the_token }).then(res => {
+            console.log(res.data._id);
+
+
+            re_router = "/main/:" + res.data._id;
+            window.location.href = window.location.origin + re_router;
+
 
         }).catch(err => {
 
@@ -37,6 +46,7 @@ const AppRouter = () => {
                     <Switch>
                         <Route path="/login" component={Login} exact />
                         <Route path="/board/:id" component={Board} exact />
+                        <Route path="/main/:id" component={Main_page} exact />
                         <Route path="*" component={Error404} />
                     </Switch>
 
